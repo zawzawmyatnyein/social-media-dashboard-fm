@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <title>Social Media Dashboard</title>
+
+    <script>
+        if (
+            localStorage.theme === 'dark' ||
+            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark');
+            localStorage.theme = 'dark';
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.theme = 'light';
+        }
+    </script>
+  </head>
+  <body class="fonts-sans bg-white dark:bg-dark-blue">
+    <header class="container w-10/12 sm:w-full mx-auto divide-y divide-slate-400 sm:divide-y-0 flex justify-between items-center">
+        <div class="pt-8 pb-4">
+            <h1 class="text-2xl text-slate-800 dark:text-white font-bold">Social Media Dashboard</h1>
+            <small class="text-sm text-slate-400 dark:text-dark-text font-bold">Total Followers: 23,004</small>
+        </div>
+        <!-- Toggle Switch  -->
+        <button
+            id="toggler"
+            type="button"
+            role="switch"
+            aria-checked="false"
+            class="
+                relative bg-toggle-bg inline-flex flex-shrink-0 items-center px-0.5 w-12 h-6 border-transparent rounded-full cursor-pointer
+                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-toggle-r
+                transition-colors ease-in-out duration-200
+            "
+        >
+            <!-- bg-gradient-to-t from-toggle-l to-toggle-r -->
+            <span class="sr-only">Theme Toggle Switch</span>
+            <span
+                id="togglerKnob"
+                aria-hidden="true"
+                class="
+                    pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow ring-0
+                    transform translate-x-6 transition ease-in-out duration-200
+                "
+            >
+            <!-- translate-x-0 -->
+            </span>
+        </button>
+    </header>
+
+    <main class="container w-10/12 sm:w-full mx-auto">
+        <section class="py-8 space-y-6 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8">
+            <div class="relative w-full h-52 text-center bg-light-card dark:bg-dark-card hover:bg-slate-200 dark:hover:bg-slate-700/70 transition-colors cursor-pointer rounded-md rounded-t-none flex flex-col items-center justify-evenly">
+                <div class="absolute -z-10 inset-0 -top-1 w-full h-1 bg-facebook rounded-t-md"></div>
+                <div class="flex items-center gap-x-2">
+                    <img src="/images/icon-facebook.svg" alt="Facebook Icon">
+                    <span class="text-xs text-slate-500 dark:text-dark-text font-bold">@nathanf</span>
+                </div>
+                <div>
+                    <div class="text-5xl text-slate-800 dark:text-white font-bold">1987</div>
+                    <div class="mt-1 text-xs text-slate-500 dark:text-dark-text tracking-[0.3em] uppercase">followers</div>
+                </div>
+                <div class="flex items-center gap-x-1">
+                    <img src="/images/icon-up.svg">
+                    <span class="text-xs text-lime-green font-bold">12 Today</span>
+                </div>
+            </div>
+
+            <div class="relative w-full h-52 text-center bg-light-card dark:bg-dark-card hover:bg-slate-200 dark:hover:bg-slate-700/70 transition-colors cursor-pointer rounded-md rounded-t-none flex flex-col items-center justify-evenly">
+                <div class="absolute -z-10 inset-0 -top-1 w-full h-1 bg-twitter rounded-t-md"></div>
+                <div class="flex items-center gap-x-2">
+                    <img src="/images/icon-twitter.svg" alt="Twitter Icon">
+                    <span class="text-xs text-slate-500 dark:text-dark-text font-bold">@nathanf</span>
+                </div>
+                <div>
+                    <div class="text-5xl text-slate-800 dark:text-white font-bold">1044</div>
+                    <div class="mt-1 text-xs text-slate-500 dark:text-dark-text tracking-[0.3em] uppercase">followers</div>
+                </div>
+                <div class="flex items-center gap-x-1">
+                    <img src="/images/icon-up.svg">
+                    <span class="text-xs text-lime-green font-bold">99 Today</span>
+                </div>
+            </div>
+
+            <div class="relative w-full h-52 text-center bg-light-card dark:bg-dark-card hover:bg-slate-200 dark:hover:bg-slate-700/70 transition-colors cursor-pointer rounded-md rounded-t-none flex flex-col items-center justify-evenly">
+                <div class="absolute -z-10 inset-0 -top-1 w-full h-1 bg-gradient-to-tr from-instagram-l to-instagram-r rounded-t-md"></div>
+                <div class="flex items-center gap-x-2">
+                    <img src="/images/icon-instagram.svg" alt="Instagram Icon">
+                    <span class="text-xs text-slate-500 dark:text-dark-text font-bold">@realnathanf</span>
+                </div>
+                <div>
+                    <div class="text-5xl text-slate-800 dark:text-white font-bold">11k</div>
+                    <div class="mt-1 text-xs text-slate-500 dark:text-dark-text tracking-[0.3em] uppercase">followers</div>
+                </div>
+                <div class="flex items-center gap-x-1">
+                    <img src="/images/icon-up.svg">
+                    <span class="text-xs text-lime-green font-bold">1099 Today</span>
+                </div>
+            </div>
+
+            <div class="relative w-full h-52 text-center bg-light-card dark:bg-dark-card hover:bg-slate-200 dark:hover:bg-slate-700/70 transition-colors cursor-pointer rounded-md rounded-t-none flex flex-col items-center justify-evenly">
+                <div class="absolute -z-10 inset-0 -top-1 w-full h-1 bg-youtube rounded-t-md"></div>
+                <div class="flex items-center gap-x-2">
+                    <img src="/images/icon-youtube.svg" alt="Youtube Icon">
+                    <span class="text-xs text-slate-500 dark:text-dark-text font-bold">Nathan F.</span>
+                </div>
+                <div>
+                    <div class="text-5xl text-slate-800 dark:text-white font-bold">8239</div>
+                    <div class="mt-1 text-xs text-slate-500 dark:text-dark-text tracking-[0.3em] uppercase">subscribers</div>
+                </div>
+                <div class="flex items-center gap-x-1">
+                    <img src="/images/icon-down.svg">
+                    <span class="text-xs text-bright-red font-bold">144 Today</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-8 space-y-6">
+            <h2 class="text-2xl text-slate-500 dark:text-white font-bold">Overview - Today</h2>
+            <div class="sm:grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8 space-y-6 sm:space-y-0">
+                <div class="w-full h-32 bg-light-card dark:bg-dark-card hover:bg-slate-200 dark:hover:bg-slate-700/70 transition-colors cursor-pointer px-6 rounded-md flex flex-col justify-evenly">
+                    <div class="flex justify-between">
+                        <div class="text-sm text-slate-500 dark:text-dark-text font-bold">Page Views</div>
+                        <img src="/images/icon-facebook.svg" alt="Facebook Icon">
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="text-3xl text-slate-800 dark:text-white font-bold">87</div>
+                        <div class="flex items-center gap-x-1">
+                            <img src="/images/icon-up.svg">
+                            <span class="text-xs text-lime-green font-bold">3%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full h-32 bg-light-card dark:bg-dark-card hover:bg-slate-200 dark:hover:bg-slate-700/70 transition-colors cursor-pointer px-6 rounded-md flex flex-col justify-evenly">
+                    <div class="flex justify-between">
+                        <div class="text-sm text-slate-500 dark:text-dark-text font-bold">Likes</div>
+                        <img src="/images/icon-facebook.svg" alt="Facebook Icon">
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="text-3xl text-slate-800 dark:text-white font-bold">52</div>
+                        <div class="flex items-center gap-x-1">
+                            <img src="/images/icon-down.svg">
+                            <span class="text-xs text-bright-red font-bold">2%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full h-32 bg-light-card dark:bg-dark-card hover:bg-slate-200 dark:hover:bg-slate-700/70 transition-colors cursor-pointer px-6 rounded-md flex flex-col justify-evenly">
+                    <div class="flex justify-between">
+                        <div class="text-sm text-slate-500 dark:text-dark-text font-bold">Likes</div>
+                        <img src="/images/icon-instagram.svg" alt="Instagram Icon">
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="text-3xl text-slate-800 dark:text-white font-bold">5462</div>
+                        <div class="flex items-center gap-x-1">
+                            <img src="/images/icon-up.svg">
+                            <span class="text-xs text-lime-green font-bold">2257%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full h-32 bg-light-card dark:bg-dark-card hover:bg-slate-200 dark:hover:bg-slate-700/70 transition-colors cursor-pointer px-6 rounded-md flex flex-col justify-evenly">
+                    <div class="flex justify-between">
+                        <div class="text-sm text-slate-500 dark:text-dark-text font-bold">Profile Views</div>
+                        <img src="/images/icon-instagram.svg" alt="Instagram Icon">
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="text-3xl text-slate-800 dark:text-white font-bold">52k</div>
+                        <div class="flex items-center gap-x-1">
+                            <img src="/images/icon-up.svg">
+                            <span class="text-xs text-lime-green font-bold">1375%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full h-32 bg-light-card dark:bg-dark-card hover:bg-slate-200 dark:hover:bg-slate-700/70 transition-colors cursor-pointer px-6 rounded-md flex flex-col justify-evenly">
+                    <div class="flex justify-between">
+                        <div class="text-sm text-slate-500 dark:text-dark-text font-bold">Retweets</div>
+                        <img src="/images/icon-twitter.svg" alt="Twitter Icon">
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="text-3xl text-slate-800 dark:text-white font-bold">117</div>
+                        <div class="flex items-center gap-x-1">
+                            <img src="/images/icon-up.svg">
+                            <span class="text-xs text-lime-green font-bold">303%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full h-32 bg-light-card dark:bg-dark-card hover:bg-slate-200 dark:hover:bg-slate-700/70 transition-colors cursor-pointer px-6 rounded-md flex flex-col justify-evenly">
+                    <div class="flex justify-between">
+                        <div class="text-sm text-slate-500 dark:text-dark-text font-bold">Likes</div>
+                        <img src="/images/icon-twitter.svg" alt="Twitter Icon">
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="text-3xl text-slate-800 dark:text-white font-bold">507</div>
+                        <div class="flex items-center gap-x-1">
+                            <img src="/images/icon-up.svg">
+                            <span class="text-xs text-lime-green font-bold">553%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full h-32 bg-light-card dark:bg-dark-card hover:bg-slate-200 dark:hover:bg-slate-700/70 transition-colors cursor-pointer px-6 rounded-md flex flex-col justify-evenly">
+                    <div class="flex justify-between">
+                        <div class="text-sm text-slate-500 dark:text-dark-text font-bold">Likes</div>
+                        <img src="/images/icon-youtube.svg" alt="Youtube Icon">
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="text-3xl text-slate-800 dark:text-white font-bold">107</div>
+                        <div class="flex items-center gap-x-1">
+                            <img src="/images/icon-down.svg">
+                            <span class="text-xs text-bright-red font-bold">19%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full h-32 bg-light-card dark:bg-dark-card hover:bg-slate-200 dark:hover:bg-slate-700/70 transition-colors cursor-pointer px-6 rounded-md flex flex-col justify-evenly">
+                    <div class="flex justify-between">
+                        <div class="text-sm text-slate-500 dark:text-dark-text font-bold">Total Views</div>
+                        <img src="/images/icon-youtube.svg" alt="Youtube Icon">
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="text-3xl text-slate-800 dark:text-white font-bold">1407</div>
+                        <div class="flex items-center gap-x-1">
+                            <img src="/images/icon-down.svg">
+                            <span class="text-xs text-bright-red font-bold">12%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
